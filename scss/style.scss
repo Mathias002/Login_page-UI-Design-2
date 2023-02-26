@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap');
+
+
+$theme-color: #db509d;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height:100vh;
+    padding: 1.5rem;
+
+    
+    &:after{
+        content: '';
+        position:fixed;
+        inset: 0;
+        background-color: $theme-color;
+        height: 100vh;
+        clip-path: polygon(0 100%,0 0, 100% 0, 70% 100%);
+        z-index: -1;
+    }
+}
+
+.login-card{
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 10px 50px -30px black;
+    width: 1200px;
+    border-radius: 30px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: auto auto;
+
+    a {
+        text-decoration: none;
+        color: $theme-color;
+    }
+
+    .column{
+        padding: 4rem;
+
+        &:last-child{
+            background: url('../img/yumeko.gif') center; 
+            background-size: cover;
+            position: relative;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            gap: 40px;
+
+            &:after{
+                content: "";
+                position: absolute;
+                background: linear-gradient(90deg, rgb(255, 255, 255), #ffffff82);
+                inset: 0;
+            }
+
+            *{
+                z-index: 1;
+            }
+
+            a{
+                display: inline-block;
+                padding: 10px 30px;
+                font-size: 16px;
+                border: 2px solid $theme-color;
+                color: black;
+                border-radius: 50px;
+                cursor: pointer;
+                transition: all .3s;
+                font-weight: 600;
+
+                &:hover{
+                    background-color: $theme-color;
+                    color: white;
+                }
+            }
+        }
+
+        &:last-child{
+            text-align: center;
+        }
+    }
+
+    .form-element{
+        width: 100%;
+        border: none;
+        background-color: #f1f1f1;
+        padding: 20px 30px;
+        font-size: 18px;
+        border-radius: 50px;
+        transition: box-shadow .2s;
+
+        &:focus{
+            outline: none;
+            box-shadow: 0 0 0 2px $theme-color;
+        }
+    }
+
+    input[type=checkbox]{
+        accent-color: $theme-color;
+        width: 16px;
+        height: 16px;
+    }
+    form {
+        margin-top: 3rem;
+
+        &>*{
+            margin-top: 1rem;
+        }
+
+        button{
+            background-color: $theme-color;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            font-weight: 18px;
+            transition: all .2s;
+
+            &:active{
+                scale: .95;
+                background-color: darken($theme-color, 10%);
+            }
+        }
+
+        .form-checkbox{
+            display: flex;
+            align-items: center;
+            gap: .7rem;
+            margin-left: 5px;
+        }
+    }
+}
+
+.flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-buttons {
+    display: flex;
+    gap: 1rem;
+
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 50px;
+        font-size: 22px;
+        color: white;
+        transition: .2s;
+
+        &.facebook{
+            background-color: #3b5998;
+        }
+
+        &.twitter{
+            background-color: #55acee;
+        }
+
+        &.github{
+            background-color: #111;
+        }
+
+        &:hover{
+            scale: .95;
+        }
+    }
+}
+
+//Responsive 
+
+@media (max-width:992px) {
+    .login-card{
+        display: block;
+        width: 500px;
+        text-align: center;
+
+        .column{
+            &:last-child{
+                display: none;
+            }
+        }
+    }
+
+    .flex{
+         flex-direction: column;
+         gap: 1rem;
+    }
+
+    .social-buttons{
+        justify-content: center;
+    }
+}
+    
+
+
+

@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 1.5rem;
+}
+body:after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-color: #db509d;
+  height: 100vh;
+  -webkit-clip-path: polygon(0 100%, 0 0, 100% 0, 70% 100%);
+          clip-path: polygon(0 100%, 0 0, 100% 0, 70% 100%);
+  z-index: -1;
+}
+
+.login-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  box-shadow: 0 10px 50px -30px black;
+  width: 1200px;
+  border-radius: 30px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: auto auto;
+}
+.login-card a {
+  text-decoration: none;
+  color: #db509d;
+}
+.login-card .column {
+  padding: 4rem;
+}
+.login-card .column:last-child {
+  background: url("../img/yumeko.gif") center;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+}
+.login-card .column:last-child:after {
+  content: "";
+  position: absolute;
+  background: linear-gradient(90deg, rgb(255, 255, 255), rgba(255, 255, 255, 0.5098039216));
+  inset: 0;
+}
+.login-card .column:last-child * {
+  z-index: 1;
+}
+.login-card .column:last-child a {
+  display: inline-block;
+  padding: 10px 30px;
+  font-size: 16px;
+  border: 2px solid #db509d;
+  color: black;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 600;
+}
+.login-card .column:last-child a:hover {
+  background-color: #db509d;
+  color: white;
+}
+.login-card .column:last-child {
+  text-align: center;
+}
+.login-card .form-element {
+  width: 100%;
+  border: none;
+  background-color: #f1f1f1;
+  padding: 20px 30px;
+  font-size: 18px;
+  border-radius: 50px;
+  transition: box-shadow 0.2s;
+}
+.login-card .form-element:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #db509d;
+}
+.login-card input[type=checkbox] {
+  accent-color: #db509d;
+  width: 16px;
+  height: 16px;
+}
+.login-card form {
+  margin-top: 3rem;
+}
+.login-card form > * {
+  margin-top: 1rem;
+}
+.login-card form button {
+  background-color: #db509d;
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  font-weight: 18px;
+  transition: all 0.2s;
+}
+.login-card form button:active {
+  scale: 0.95;
+  background-color: #ce2a85;
+}
+.login-card form .form-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-left: 5px;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.social-buttons {
+  display: flex;
+  gap: 1rem;
+}
+.social-buttons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  font-size: 22px;
+  color: white;
+  transition: 0.2s;
+}
+.social-buttons a.facebook {
+  background-color: #3b5998;
+}
+.social-buttons a.twitter {
+  background-color: #55acee;
+}
+.social-buttons a.github {
+  background-color: #111;
+}
+.social-buttons a:hover {
+  scale: 0.95;
+}
+
+@media (max-width: 992px) {
+  .login-card {
+    display: block;
+    width: 500px;
+    text-align: center;
+  }
+  .login-card .column:last-child {
+    display: none;
+  }
+  .flex {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .social-buttons {
+    justify-content: center;
+  }
+}/*# sourceMappingURL=style.css.map */
